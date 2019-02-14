@@ -8,9 +8,10 @@
 
 <body>
     <h1>Rango says...</h1>
-    <div>hey there partner!</div>
+    <div>Hey there partner!</div>
 
     <div>
+        <h2>Most Viewed Categories</h2>
     {% if categories %}
     <ul>
         {% for category in categories %}
@@ -24,8 +25,24 @@
     {% endif %}
     </div>
 
+</div>
+<!--/span-->
+<div class="span6">
+    <h2>Most Viewed Pages</h2>
+    {% if pages %}
+    <ul>
+        {% for page in pages %}
+        <li><a href="{{ page.url}}">{{ page.title }}</a> </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <strong>No pages at present.</strong>
+    {% endif %}
+
+</div>
+
     <div>
-        <a href="/rango/about/">About Rango</a><br />
+        <a href="/rango/about/">About Rango</a> <br />
         <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
     </div>
 </body>
